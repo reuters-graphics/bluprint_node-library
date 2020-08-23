@@ -13,7 +13,7 @@ const plugins = [
 const output = {
   dir: 'dist',
   format: 'cjs',
-  paths: { '@reuters-graphics/covid-metadata-client': './index.js' },
+  paths: { '@reuters-graphics/project-slug': './index.js' },
 };
 
 export default [{

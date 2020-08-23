@@ -1,14 +1,15 @@
 {
-  "name": "@reuters-graphics/graphics-atlas-client",
+  "name": "@reuters-graphics/project-slug",
   "version": "0.0.1",
   "main": "dist/index.js",
-  "repository": "https://github.com/reuters-graphics/<your repo>",
+  "repository": "https://github.com/reuters-graphics/project-slug",
   "author": "Jon McClure <jon.r.mcclure@gmail.com>",
   "license": "MIT",
   "private": false,
   "keywords": [],
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "badge.svg"
   ],
   "scripts": {
     "prepublishOnly": "yarn test",

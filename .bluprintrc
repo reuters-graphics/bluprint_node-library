@@ -1,0 +1,45 @@
+{
+  "bluprint": "^0.6.2",
+  "name": "Node library template",
+  "category": "",
+  "actions": [{
+    "action": "prompt",
+    "questions": [{
+      "type": "text",
+      "name": "projectSlug",
+      "message": "What's the slug for this project?"
+    }]
+  }, {
+    "action": "remove",
+    "paths": ["README.md"]
+  }, {
+    "action": "move",
+    "paths": ["PROJECT_README.md", "README.md"]
+  }, {
+    "action": "regexreplace",
+    "files": [
+      "README.md",
+      "package.json",
+      "rollup.config.js",
+      "test/index.js",
+      "src/index.js"
+    ],
+    "replace": [
+      ["project-slug", "{{#slugify}}{{ projectSlug }}{{/slugify}}"],
+      ["ProjectClass", "{{#camelize}}{{#capitalize}}{{#slugify}}{{ projectSlug }}{{/slugify}}{{/capitalize}}{{/camelize}}"],
+      ["projectInstance", "{{#camelize}}{{#slugify}}{{ projectSlug }}{{/slugify}}{{/camelize}}"]
+    ]
+  }, {
+    "action": "execute",
+    "cmds": [
+      ["yarn"]
+    ]
+  }, {
+    "action": "execute",
+    "cmds": [
+      ["git", ["init"]],
+      ["git", ["add", "."]],
+      ["git", ["commit", "-m", "initial"]]
+    ]
+  }]
+}
