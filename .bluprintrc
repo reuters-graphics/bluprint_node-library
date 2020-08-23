@@ -16,6 +16,9 @@
     "action": "move",
     "paths": ["PROJECT_README.md", "README.md"]
   }, {
+    "action": "move",
+    "paths": ["env", ".env"]
+  }, {
     "action": "regexreplace",
     "files": [
       "README.md",
